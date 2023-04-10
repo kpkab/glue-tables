@@ -64,7 +64,7 @@ async def create_table(glue:Glue_table):
 @app.get("/table/get_tables/{DatabaseName}")
 async def get_tables(DatabaseName: str):
     """
-    This endpoint creates a Glue table for glue databse.
+    This endpoint return the Glue table for glue databse.
     """
     try:
         response = client.get_tables(
@@ -95,7 +95,7 @@ async def get_tables(DatabaseName: str):
 @app.get("/table/get_table/{Name}/{DatabaseName}")
 async def get_table(Name: str, DatabaseName: str):
     """
-    This endpoint creates a Glue table for glue databse.
+    This endpoint returns specific Glue table for glue databse.
     """
     try:
         response = client.get_table(
@@ -129,7 +129,7 @@ async def get_table(Name: str, DatabaseName: str):
 @app.get("/table/search_table/{SearchText}")
 async def search_table(SearchText: str):
     """
-    This endpoint creates a Glue table for glue databse.
+    This endpoint search the Glue tables.
     """
     try:
         response = client.search_tables(
@@ -156,7 +156,7 @@ async def search_table(SearchText: str):
 @app.delete("/table/delete_table/{Name}/{DatabaseName}")
 async def delete_table(Name: str, DatabaseName: str): 
     """
-    This endpoint creates a Glue table for glue databse.
+    This endpoint delete Glue table from glue databse.
     """
     try:
         response = client.delete_table(
