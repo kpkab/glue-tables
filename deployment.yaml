@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: glue-table
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: glue-table
+  template:
+    metadata:
+      labels:
+        app: glue-table
+    spec:
+      containers:
+      - name: glue-table
+        image:  vijay165/glue_table
+        ports:
+        - containerPort: 80
